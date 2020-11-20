@@ -9,6 +9,9 @@ class ProjectsController < ApplicationController
    def new
     @project = Project.new()
   end
+  def edit
+    @project = Project.find(params[:id])
+  end
   def create
   	puts "========================"
   	puts Project.inspect
@@ -26,6 +29,15 @@ class ProjectsController < ApplicationController
         format.html { render :new }
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
+    end
+  end
+  def update
+    @project = Project.find(params[:id])
+ 
+    if @project.update(project_params)
+      redirect_to action: :index
+    else
+      render 'edit'
     end
   end
   def project_params

@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "users/registrations"}
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :projects, :controllers => {:projects => "projects/new"}
-
+  resources :projects
     # post '/delete_collaborator', to: 'projects#delete_collaborator'
 
     # resources :comments, :notes, shallow: true

@@ -1,0 +1,21 @@
+<%= form_for(@project) do |form| %>
+<div class="container">
+    <%= form.label :project_name %><br />
+<%= form.select :project_type, options_for_select(Project.project_types.map {|k,v| [k.humanize.capitalize]}) %>
+  </div>
+  <div class="container">
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+ 
+  <div class="container">
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </div>
+
+  
+  <div class="container">
+    <%= form.submit %>
+  </div>
+
+<% end %>
