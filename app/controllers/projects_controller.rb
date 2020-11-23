@@ -4,43 +4,29 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
  def show
+ 	puts "========"
+ 	    puts @project.inspect
  	@project = Project.find(params[:id])
  end
    def new
     @project = Project.new()
   end
-  def edit
-    @project = Project.find(params[:id])
-  end
   def create
-  	puts "========================"
-  	puts Project.inspect
-    @project = Project.new(project_params)
+  	@project = Project.new(project_params)
     @project.user_id = current_user.id
-    @project.project_type = params[:project][:project_type]
+    @project.project_type = params[:project_type]
     puts @project.inspect
     # puts 
 
-    respond_to do |format|
+   
       if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
-        format.json { render :show, status: :created, location: @project }
+       redirect_to @project
+
       else
-        format.html { render :new }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
+        render :new 
       end
-    end
-  end
-  def update
-    @project = Project.find(params[:id])
- 
-    if @project.update(project_params)
-      redirect_to action: :index
-    else
-      render 'edit'
-    end
   end
   def project_params
-      params.require(:project).permit(:title, :text)
+      params.permit(:title, :text,:project_type)
     end
 end

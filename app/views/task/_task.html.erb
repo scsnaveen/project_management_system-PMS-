@@ -1,3 +1,4 @@
+
 <div class='container-fluid'>
       <p id="notice"><%= notice %></p>
       <div class='row py-3 px-3'>
@@ -12,10 +13,11 @@
               </tr>
             </thead>
             <tbody>
-              <% @projects.each do |project| %>
+              <% @task.each do |task| %>
                 <tr>
-                   <td><%= project.title %></td>
-                   <td><%= project.text %></td>
+                   <td><%= task.name%></td>
+                   <td><%= task.description %></td>
+                   <td><%= task.project.name %></td>
                     <td><%= link_to 'Show', projects_path(id: project.id) %></td>
                 </tr>
               <% end %>
@@ -23,9 +25,12 @@
           </table>
           <br>
           <div class='inline-button'>
-          <%= link_to 'New Project',new_project_path,class: "btn btn-primary" %> 
+          <%= link_to 'New Project',new_project_task_path,class: "btn btn-primary" %> 
       </div>
         </div>          
         </div>
       </div>
     </div>
+
+
+<%= button_to "Edit task", edit_task_project_path(@task), method: :get %>

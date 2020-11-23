@@ -55,7 +55,7 @@
     <%= f.label :organization %><br />
     <%= f.select :organization_id, Organization.all.collect { |o| [ o.organization_name, o.id ] },class: 'form-control'%>  
   </div><br>
-  <div class="actions container">
+  <div class="actions">
     <%= f.submit "Sign up", class: "btn btn-primary center-block" %>
   </div>
   

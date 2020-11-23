@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
 	belongs_to :user
-	enum project_type: [ :Training, :Project ]
+	has_many :tasks
+	enum types: [ :Training, :Project ]
 
 end
