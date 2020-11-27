@@ -4,7 +4,6 @@ Rails.application.routes.draw do
     get 'users/sign_in'
   end
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'image/new'
   get 'image/edit'
   get 'image/show'

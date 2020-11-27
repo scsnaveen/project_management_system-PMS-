@@ -14,6 +14,7 @@ class User < ApplicationRecord
    has_many :projects
    has_one_attached :attachment
    mount_uploader :attachment, AvatarUploader
-    # enum :role[:admin,:superadmin]
-
+   # has_one :role
+     # enum role:[:admin,:superadmin,:user]
+     
 end
