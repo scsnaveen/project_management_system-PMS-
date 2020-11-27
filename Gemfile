@@ -58,6 +58,10 @@ gem 'devise'
 # gem 'bootstrap_form'
 gem "twitter-bootstrap-rails"
 # gem 'therubyracer'
-# gem 'bootstrap-sass', '~> 3.4.1'
+ gem 'bootstrap-sass', '~> 3.4.1'
 # gem 'sassc-rails', '>= 2.1.0'
  gem 'carrierwave', '~> 2.0'
+ gem "mini_magick"
+gem 'rails_admin', '~> 2.0'
+gem 'cancancan'
+

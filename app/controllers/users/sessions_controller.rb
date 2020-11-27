@@ -14,8 +14,12 @@ class users::SessionsController < Devise::SessionsController
   # end
 
   # DELETE /resource/sign_out
-  # def destroy
-  #   super
+  #  def destroy
+  #    super
+  #  end
+  #  def current_user
+  #   @_current_user ||= session[:current_user_id] &&
+  #     User.find_by(id: session[:current_user_id])
   # end
 
   # protected

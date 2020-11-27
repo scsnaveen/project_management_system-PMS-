@@ -1,6 +1,4 @@
-<div class="float-container ">
-<div class="float-child">
-    <div class="container">
+<div class="container">
  <strong>Project Type:</strong>
   <%=@project.project_type%>
  </div>
@@ -13,15 +11,27 @@
     <strong>Description:</strong>
   <%= @project.text %>
   </div>
-</div>
-  <div class="float-child">
-  <div class="container">
-
-  <%= render template: "task/show"%>
-
- <div class="inline-button container">
-  <%= link_to "New Task", new_project_task_path(@project), class: "btn btn-primary" %>
-</div>
-  </div>
+<div class="col-xs-8 container">
+<h2 class="sub-header">Tasks</h2>
+  <div class="table-responsive container">
+            <table class="table table-striped">
+                <tr>
+               <%= render template: "task/show"%>
+                </tr>
+                 <tr>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+  <div class="col-xs-8 container">
+          <h2 class="sub-header">Attachments</h2>
+          <div class="table-responsive container">
+            <table class="table table-striped">
+                <tr>
+                  <%= render template: "avatar/index"%>
+                </tr>
+              </tbody>
+            </table>
+              <%= link_to "New Attachment", new_project_avatar_path(@project), class: "btn btn-primary" %>
 </div>
 </div>

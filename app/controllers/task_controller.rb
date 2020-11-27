@@ -20,6 +20,6 @@ class TaskController < ApplicationController
   end
   private
     def task_params
-        params.permit(:name, :description,:avatar)
+        params.permit(:name, :description)
     end
 end

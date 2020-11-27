@@ -3,6 +3,15 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
   <div class="container">
+    
+    <%= image_tag("http://localhost:3000"+current_user.attachment_url) %>
+    
+    <%= f.label :Image %>
+    <%= f.file_field :attachment %>
+    
+  </div>
+    
+  <div class="container">
     <%= f.label :firstname  %><br />
     <%= f.text_field :name, autofocus: true  %>
   </div><br>

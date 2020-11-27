@@ -4,8 +4,7 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
  def show
- 	puts "========"
- 	    puts @project.inspect
+ 	
  	@project = Project.find(params[:id])
  end
    def new
@@ -20,13 +19,13 @@ class ProjectsController < ApplicationController
 
    
       if @project.save
-       redirect_to @project
+       redirect_to projects_path
 
       else
         render :new 
       end
   end
   def project_params
-      params.permit(:title, :text,:project_type)
+      params.permit(:title, :text,:project_type,:avatar,:attachment)
     end
 end

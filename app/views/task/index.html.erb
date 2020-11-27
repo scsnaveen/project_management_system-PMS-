@@ -3,13 +3,12 @@
 <div class="default-block">
   <h2>Your Tasks</h2>
   <div class="line-dark"></div>
-  <% if @tasks.empty? %>
-    <h4>It looks like you don't have any tasks. Why not create new one?</h4>
-  <% else %>
+  
     <div class="row">
-      <% @tasks.each_with_index do |task, index| %>
+    	<div class="col-sm-4">
+      <% @Task.where(project_id: params[:id]).each do |task, index| %>
         <%= render partial: "task", locals: {task: task, index: index } %>
-      <%end %>
+      </div>
     </div>
   <% end %>
 </div>
