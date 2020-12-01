@@ -15,11 +15,11 @@
       <% Avatar.where(project_id: params[:id]).each do |avatar| %>
          
          <tr>
-            <td><%= link_to "Download Avatar", avatar.attachment_url %></td>
+            <td><%= link_to "Download Avatar", avatar.attachment_url,:class =>'links' %></td>
             
          </tr>
          
       <% end %>
-   </tbody>
-   
+   </tbody>   
 </table>
+

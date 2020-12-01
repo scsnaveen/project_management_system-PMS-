@@ -12,7 +12,7 @@ class User < ApplicationRecord
    validates :phonenumber,numericality: { only_integer: true },presence: true
    belongs_to :organization
    has_many :projects
-   has_one_attached :attachment
+   has_one :attachment
    mount_uploader :attachment, AvatarUploader
    # has_one :role
      # enum role:[:admin,:superadmin,:user]

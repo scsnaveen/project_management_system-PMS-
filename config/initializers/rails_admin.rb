@@ -1,3 +1,4 @@
+require Rails.root.join('lib', 'rails_admin' , 'admin_list.rb')
 RailsAdmin.config do |config|
 
   ### Popular gems integration
@@ -33,9 +34,13 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
-
-    ## With an audit adapter, you can add:
-    # history_index
-    # history_show
+    
+    admin_list do
+      visible do
+        bindings[:abstract_model].model.to_s == "User"
+      end
+    end
+    user_detail
   end
+
 end

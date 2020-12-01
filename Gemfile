@@ -64,4 +64,5 @@ gem "twitter-bootstrap-rails"
  gem "mini_magick"
 gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
+gem "font-awesome-rails"
 

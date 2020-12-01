@@ -11,24 +11,26 @@ class Ability
       if user.role == "superadmin"
           can :manage, :all
       elsif user.role == "admin"
-          can :read,[Project,Task,Avatar]
+         can :read, :dashboard 
+         can :read,:all
+         read_models =[]
+         user.read_model.each_with_index{|model,index| read_models[index] = Object.const_get model}
+          can :read,read_models
           can :access, :rails_admin 
-          can :update,:all
-          can :create,Project
+          can [:admin_list,:user_detail], User    
+          create_models = []
+          # create_models = user.create_model.select {|model| Object.const_get model}
+          user.create_model.each_with_index {|model,index| create_models[index] = Object.const_get model}
+          can :create,create_models
           can [:create,:destroy],[Task,Avatar]
-          cannot :destroy, Organization
+        #   cannot :destroy, Organization
       elsif user.role == "employee"
         can :read, :dashboard 
           can :access, :rails_admin 
+          can :read,:all
+          can :admin_list,User
        end
       
-
-             # allow everyone to read everything
-    # return unless user && user.admin?
-    # can :access, :rails_admin       # only allow admin users to access Rails Admin
-    # can :read, :dashboard           # allow access to dashboard
-    # if user.role? :superadmin
-    #   can :manage, :all             # allow superadmins to do anything
    
     # The first argument to `can` is the action you are giving the user
     # permission to do.

@@ -34,13 +34,4 @@ end
    get '/projects/:project_id/avatar/show',as: :project_avatar, to: 'avatar#show'
    post 'image/create',as: :create_image,to: 'image#create'
 
-    # post '/delete_collaborator', to: 'projects#delete_collaborator'
-
-    # resources :comments, :notes, shallow: true
-
-  #   resources :tasks, shallow: true do 
-  #     get :complete, on: :collection, to: "tasks#complete"
-  #     get :overdue, on: :collection, to: "tasks#overdue"
-    
-  # end
 end

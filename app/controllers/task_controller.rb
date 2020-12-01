@@ -13,7 +13,6 @@ class TaskController < ApplicationController
   	@task = Task.new
   end
   def show
-  	puts ";;;;"
   	    @project = Project.find(params[:project_id])
   	    @project.user_id = current_user.id
         @tasks = Task.where(project_id: params[:project_id])
