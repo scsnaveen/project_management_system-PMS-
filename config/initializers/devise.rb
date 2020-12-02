@@ -308,5 +308,10 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+  config.ga_timeout = 3.days
+  config.ga_timedrift =  3
+  config.ga_remembertime = 1.month
+  config.ga_appname = 'rails'
+  config.ga_bypass_signup = true
 
 end

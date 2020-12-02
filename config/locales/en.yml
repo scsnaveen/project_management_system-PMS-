@@ -35,10 +35,11 @@ en:
   admin:
     actions:
       admin_list:
-        title: "admin_list"
-        menu: "admin_list"
-        breadcrumb:  "admin_list"
+        title: "admin list"
+        menu: "admin list"
+        breadcrumb:  "admin list"
       user_detail:
-        title: "user_detail"
-        menu: "user_detail"
-        breadcrumb:  "user_detail"
+        title: "user detail"
+        menu: "user detail"
+        breadcrumb:  "user detail"
+        

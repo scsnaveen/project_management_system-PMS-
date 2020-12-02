@@ -65,4 +65,5 @@ gem "twitter-bootstrap-rails"
 gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
 gem "font-awesome-rails"
+gem 'devise_google_authenticator', :path => 'lib/devise_google_authenticator', :require => 'devise_google_authenticator'
 
